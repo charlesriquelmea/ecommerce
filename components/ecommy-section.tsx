@@ -26,13 +26,13 @@ const features = [
       'El AI conversa, pregunta, recomienda. Como el mejor vendedor de tu tienda — pero disponible 24/7, en español, inglés o el idioma de tu cliente.',
     tech: 'LLM',
   },
-  {
+  /* {
     icon: ShoppingCart,
     title: 'Carrito Recuperado con IA',
     description:
       'Detecta abandono en tiempo real y re-engancha al cliente con la oferta correcta en el momento exacto. Recupera hasta el 30% de carritos perdidos.',
     tech: 'Conversión',
-  },
+  }, */
 ]
 
 const flowSteps = [
@@ -308,7 +308,7 @@ export function EcommySection() {
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
-          className="w-[800px] h-[800px] rounded-full opacity-8 blur-3xl"
+          className="w-200 h-200 rounded-full opacity-8 blur-3xl"
           style={{ background: 'radial-gradient(circle, #00e5cc 0%, transparent 70%)' }}
         />
       </div>
@@ -382,7 +382,7 @@ export function EcommySection() {
         <AIFlowDiagram />
 
         {/* Feature cards */}
-        <div className="grid md:grid-cols-2 gap-5 mb-12">
+        <div className="grid lg:grid-cols-3 gap-5 mb-12">
           {features.map(({ icon: Icon, title, description, tech }, i) => (
             <motion.div
               key={i}

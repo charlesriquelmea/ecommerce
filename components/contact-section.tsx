@@ -128,7 +128,7 @@ export function ContactSection() {
     <div key="name" className="space-y-4">
       <h3 className="font-display font-black text-2xl text-white">¿Cómo te llamas?</h3>
       <Input
-        autoFocus
+        /* autoFocus */
         placeholder="Tu nombre completo"
         value={data.name}
         onChange={(e) => update('name', e.target.value)}
