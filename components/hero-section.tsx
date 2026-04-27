@@ -43,7 +43,7 @@ function TypewriterEyebrow() {
         {displayed}
       </span>
       <span
-        className="inline-block w-[2px] h-3.5 bg-[#00e5cc] rounded-sm"
+        className="inline-block w-0.5 h-3.5 bg-[#00e5cc] rounded-sm"
         style={{ opacity: blink ? 1 : 0, transition: 'opacity 0.1s' }}
       />
     </div>
@@ -125,6 +125,56 @@ const trustBadges = [
   { icon: Zap, label: '0% comisiones con MedusaJS' },
 ]
 
+const TypeWriter = ({ fullText, highlightStart, highlightEnd }: { fullText: string, highlightStart: number, highlightEnd: number }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const speed = 30;
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayedText(fullText.slice(0, i + 1));
+      i++;
+      if (i >= fullText.length) clearInterval(interval);
+    }, speed);
+    return () => clearInterval(interval);
+  }, [fullText]);
+
+  return (
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
+      className="font-display font-bold text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.08] tracking-tight text-balance mb-6"
+    >
+      {displayedText.split("").map((char, i) => {
+        if (i >= highlightStart && i < highlightEnd) {
+          return (
+            <span key={i} className="text-gradient-cyan">
+              {char}
+            </span>
+          );
+        }
+        return char;
+      })}
+    </motion.h1>
+  );
+};
+
+export default function HeroTitle() {
+  const text =
+    'Sistema de ventas con AI que no solo muestra productos, sino que los “vende” mediante conversación.';
+  const highlightPart = '“vende” mediante conversación.';
+  const start = text.indexOf(highlightPart);
+  
+  return (
+    <TypeWriter
+      fullText={text}
+      highlightStart={start}
+      highlightEnd={start + highlightPart.length}
+    />
+  );
+}
+
 export function HeroSection() {
   return (
     <section
@@ -134,15 +184,15 @@ export function HeroSection() {
     >
       <div className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl"
+          className="absolute top-1/4 left-1/4 w-150 h-150 rounded-full opacity-10 blur-3xl"
           style={{ background: 'radial-gradient(circle, #00e5cc 0%, transparent 70%)' }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-8 blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-100 h-100 rounded-full opacity-8 blur-3xl"
           style={{ background: 'radial-gradient(circle, #00bfa5 0%, transparent 70%)' }}
         />
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] opacity-5 blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-225 h-150 opacity-5 blur-3xl"
           style={{
             background:
               'conic-gradient(from 180deg at 50% 50%, #00e5cc 0%, transparent 30%, #00bfa5 60%, transparent 100%)',
@@ -162,7 +212,7 @@ export function HeroSection() {
               <TypewriterEyebrow />
             </motion.div>
 
-            <motion.h1
+            {/* <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -170,7 +220,9 @@ export function HeroSection() {
             >
               Sistema de ventas con AI que no solo muestra productos, sino que los{' '}
               <span className="text-gradient-cyan">&ldquo;vende&rdquo; mediante conversación.</span>
-            </motion.h1>
+            </motion.h1> */}
+            
+            <HeroTitle/>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
