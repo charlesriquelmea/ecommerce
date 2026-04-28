@@ -50,9 +50,9 @@ function ShopifyMockup() {
   ]
 
   return (
-    <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0d1525] shadow-2xl">
+    <div className="rounded-2xl w-full overflow-hidden border border-white/10 bg-[#0d1525] shadow-2xl">
       {/* Browser chrome */}
-      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/8 bg-[#0a0f1e]">
+      <div className="flex items-center gap-2 px-2 sm:px-4 py-2.5 border-b border-white/8 bg-[#0a0f1e]">
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
@@ -65,9 +65,9 @@ function ShopifyMockup() {
       </div>
 
       {/* Shopify Admin UI */}
-      <div className="flex h-52">
+      <div className="flex flex-col sm:flex-row h-auto">
         {/* Sidebar */}
-        <div className="w-36 border-r border-white/6 bg-[#0a0f1e] p-3 flex flex-col gap-1 shrink-0">
+        <div className="sm:w-36 w-fit border-r border-white/6 bg-[#0a0f1e] p-3 flex flex-col gap-1 shrink-0">
           <div className="text-[9px] font-mono text-slate-600 uppercase tracking-wider mb-2 px-2">Admin</div>
           {[
             { icon: BarChart2, label: 'Dashboard', active: false },
@@ -264,7 +264,8 @@ export function DuelSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Tabs defaultValue="shopify">
-            <TabsList className="mb-8 p-1 rounded-xl h-auto gap-1 border border-white/8"
+
+            <TabsList className="flex flex-col md:flex-row mb-8 p-1 rounded-xl h-auto gap-1 border border-white/8"
               style={{ background: 'rgba(13,21,37,0.8)' }}>
               <TabsTrigger
                 value="shopify"
@@ -313,10 +314,13 @@ export function DuelSection() {
                       ))}
                     </div>
 
-                    <div className="rounded-xl p-4 border border-amber-500/30"
+                    <div className="rounded-xl p-4 border w-60 sm:w-fit border-amber-500/30"
                       style={{ background: 'rgba(245,158,11,0.06)' }}>
                       <p className="text-sm text-amber-300 leading-relaxed">
-                        <strong className="text-amber-400">Nota honesta:</strong> Shopify cobra comisiones y un fee mensual. A medida que escales, este &ldquo;impuesto al éxito&rdquo; crece contigo. Perfecto para empezar, pero considera migrar a MedusaJS al crecer.
+                        <strong className="text-amber-400">Nota honesta: </strong> 
+                         Shopify cobra comisiones y un fee mensual. A medida que escales,
+                        este &ldquo;impuesto al éxito&rdquo; crece contigo. Perfecto para 
+                        empezar, pero considera migrar a MedusaJS al crecer.
                       </p>
                     </div>
                   </div>
@@ -401,17 +405,17 @@ export function DuelSection() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-white/3">
-                    <th className="text-left px-6 py-3 text-slate-400 font-medium">Característica</th>
-                    <th className="text-left px-6 py-3 text-emerald-400 font-semibold">Shopify</th>
-                    <th className="text-left px-6 py-3 text-[#00e5cc] font-semibold">MedusaJS</th>
+                    <th className="text-left px-2 py-3 text-slate-400 font-medium">Característica</th>
+                    <th className="text-left px-2 py-3 text-emerald-400 font-semibold">Shopify</th>
+                    <th className="text-left px-2 py-3 text-[#00e5cc] font-semibold">MedusaJS</th>
                   </tr>
                 </thead>
                 <tbody>
                   {duelRows.map((row, i) => (
                     <tr key={i} className={`border-t border-white/5 ${i % 2 === 0 ? 'bg-white/1' : ''}`}>
-                      <td className="px-6 py-3.5 text-slate-400">{row.feature}</td>
-                      <td className="px-6 py-3.5 text-slate-200 font-mono">{row.shopify}</td>
-                      <td className="px-6 py-3.5 text-[#00e5cc] font-mono font-semibold">{row.medusa}</td>
+                      <td className="px-2 py-3.5 text-slate-400">{row.feature}</td>
+                      <td className="px-2 py-3.5 text-slate-200 font-mono">{row.shopify}</td>
+                      <td className="px-2 py-3.5 text-[#00e5cc] font-mono font-semibold">{row.medusa}</td>
                     </tr>
                   ))}
                 </tbody>
