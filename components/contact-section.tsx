@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 import { Label } from '@/components/ui/label'
@@ -47,11 +47,10 @@ function OptionButton({
     <button
       type="button"
       onClick={onClick}
-      className={`w-full text-left px-5 py-3.5 rounded-xl border text-sm font-medium transition-all duration-200 ${
-        selected
-          ? 'border-[#00e5cc] text-white'
-          : 'border-white/10 text-slate-300 hover:border-white/20 hover:text-white'
-      }`}
+      className={`w-full text-left px-5 py-3.5 rounded-xl border text-sm font-medium transition-all duration-200 ${selected
+        ? 'border-[#00e5cc] text-white'
+        : 'border-white/10 text-slate-300 hover:border-white/20 hover:text-white'
+        }`}
       style={{
         background: selected ? 'rgba(0,229,204,0.1)' : 'rgba(255,255,255,0.03)',
       }}
@@ -75,11 +74,10 @@ function CheckOption({
   return (
     <label
       htmlFor={id}
-      className={`flex items-center gap-3 px-5 py-3.5 rounded-xl border text-sm font-medium cursor-pointer transition-all duration-200 ${
-        checked
-          ? 'border-[#00e5cc] text-white'
-          : 'border-white/10 text-slate-300 hover:border-white/20 hover:text-white'
-      }`}
+      className={`flex items-center gap-3 px-5 py-3.5 rounded-xl border text-sm font-medium cursor-pointer transition-all duration-200 ${checked
+        ? 'border-[#00e5cc] text-white'
+        : 'border-white/10 text-slate-300 hover:border-white/20 hover:text-white'
+        }`}
       style={{
         background: checked ? 'rgba(0,229,204,0.1)' : 'rgba(255,255,255,0.03)',
       }}
@@ -103,11 +101,21 @@ export function ContactSection() {
 
   const progress = Math.round(((step) / TOTAL_STEPS) * 100)
 
+  /*   const advance = () => {
+      if (step < TOTAL_STEPS - 1) {
+        setDirection(1)
+        setStep((s) => s + 1)
+      } else {
+        setDone(true)
+      }
+    } */
+   
   const advance = () => {
     if (step < TOTAL_STEPS - 1) {
       setDirection(1)
       setStep((s) => s + 1)
     } else {
+      handleSubmit()   // ← envía con todos los datos completos
       setDone(true)
     }
   }
@@ -244,6 +252,49 @@ export function ContactSection() {
       </Select>
     </div>,
   ]
+  /* 
+    const emailSentRef = useRef(false)
+  
+    useEffect(() => {
+      if (step !== 6 || emailSentRef.current) return
+  
+      emailSentRef.current = true
+  
+      // Call API as soon as loading starts
+      const sendData = async () => {
+        try {
+          await fetch("api/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: data.name,
+              email: data.email,
+              phone: data.phone,
+              hasStore: data.hasStore,
+              catalogSize: data.catalogSize,
+              interests: data.interests,
+              budget: data.budget,
+              preferredTime: data.preferredTime,
+            }),
+          })
+        } catch (err) {
+          console.error("Failed to send email:", err)
+        }
+      }
+      sendData()
+    }, [step]) */
+
+  const handleSubmit = async () => {
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+    } catch (err) {
+      console.error("Failed to send email:", err)
+    }
+  }
 
   const canAdvance = [
     !!data.name,
@@ -255,6 +306,8 @@ export function ContactSection() {
     !!data.phone && !!data.preferredTime,
   ][step]
 
+
+
   return (
     <section
       id="contacto"
@@ -263,7 +316,7 @@ export function ContactSection() {
     >
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
-          className="w-[500px] h-[500px] rounded-full opacity-5 blur-3xl"
+          className="w-125 h-125 rounded-full opacity-5 blur-3xl"
           style={{ background: 'radial-gradient(circle, #f59e0b 0%, transparent 70%)' }}
         />
       </div>
