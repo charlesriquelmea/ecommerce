@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     description: 'Shopify o MedusaJS Headless. Con IA nativa que cierra ventas 24/7.',
     type: 'website',
   },
+  icons: {
+    icon: 'favicon.png',
+    apple: 'favicon.png',
+  },
 }
 
 export default function RootLayout({
