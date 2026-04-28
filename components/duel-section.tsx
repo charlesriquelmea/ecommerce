@@ -33,7 +33,7 @@ const medusaFeatures = [
 ]
 
 const duelRows = [
-  { feature: 'Setup (único)', shopify: '$970 USD', medusa: '$1,490 USD' },
+  { feature: 'Setup (único)', shopify: '$1470 USD', medusa: '$1,690 USD' },
   { feature: 'Retainer mensual', shopify: '$290/mes', medusa: '$350/mes' },
   { feature: 'Comisión por venta', shopify: '0.5–2%', medusa: '0%' },
   { feature: 'Propiedad del código', shopify: 'Parcial', medusa: '100% tuyo' },
@@ -295,7 +295,7 @@ export function DuelSection() {
                         <h3 className="font-display font-black text-2xl text-white">Shopify Starter</h3>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono font-bold text-3xl text-white">$970</p>
+                        <p className="font-mono font-bold text-3xl text-white">$1470</p>
                         <p className="text-slate-400 text-sm">Setup + $290/mes retainer</p>
                         <div className="flex items-center gap-1.5 justify-end mt-1.5">
                           <Clock size={12} className="text-slate-500" />
@@ -348,7 +348,7 @@ export function DuelSection() {
                         <h3 className="font-display font-black text-2xl text-white">MedusaJS Headless</h3>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono font-bold text-3xl text-white">$1,490</p>
+                        <p className="font-mono font-bold text-3xl text-white">$1,690</p>
                         <p className="text-slate-400 text-sm">Setup + $350/mes retainer</p>
                         <div className="flex items-center gap-1.5 justify-end mt-1.5">
                           <Clock size={12} className="text-slate-500" />

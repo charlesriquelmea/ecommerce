@@ -108,7 +108,8 @@ export function ProblemSection() {
           className="glass rounded-2xl overflow-hidden border border-white/8"
         >
           {/* Table header */}
-          <div className="px-6 py-4 border-b border-white/8 flex items-center justify-between flex-wrap gap-2">
+          {/* <div className="px-6 py-4 border-b border-white/8 flex items-center 
+          justify-between flex-wrap gap-2">
             <h3 className="font-display font-bold text-white text-lg">
               ¿Cuánto cobra una agencia en USA?
             </h3>
@@ -118,10 +119,31 @@ export function ProblemSection() {
             >
               Referencia de mercado
             </Badge>
-          </div>
+          </div> */}
 
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
+              <thead>
+                <tr className="">
+                  <th className="px-6 py-4 border-b border-white/8 flex items-center 
+                  justify-between flex-wrap gap-2">
+                    ¿Cuánto cobra una agencia en USA?</th>
+
+                  <th className="font-mono text-xs rounded-full"
+                  >
+                    <Badge
+                      className="font-mono text-xs px-3 py-1 rounded-full flex justify-start"
+                      style={{
+                        background: 'linear-gradient(135deg, #00e5cc20, #00bfa520)',
+                        color: '#00e5cc',
+                        border: '1px solid #00e5cc40',
+
+                      }}
+                    >
+                      Referencia de mercado
+                    </Badge></th>
+                </tr>
+              </thead>
               <thead>
                 <tr className="bg-white/3">
                   <th className="text-left px-6 py-3.5 text-slate-400 font-medium">Plataforma</th>
