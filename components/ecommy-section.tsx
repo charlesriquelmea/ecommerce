@@ -205,20 +205,20 @@ function PersonalShopperCard() {
                     </div>
 
                     {msg.products && (
-                      <div className="ml-8 grid grid-cols-3 gap-2">
+                      <div className="ml-2 w-70 sm:w-auto sm:ml-8 grid grid-cols-3 gap-2">
                         {msg.products.map((p, pi) => (
                           <motion.div
                             key={pi}
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: pi * 0.1 }}
-                            className="rounded-xl p-3 border text-center cursor-pointer hover:scale-105 transition-transform"
+                            className="rounded-xl p-2 sm:p-3 border text-center cursor-pointer hover:scale-105 transition-transform"
                             style={{ background: 'rgba(255,255,255,0.04)', borderColor: `${p.color}25` }}
                           >
                             <p className="font-mono font-bold text-sm" style={{ color: p.color }}>{p.price}</p>
                             <p className="text-white text-[10px] font-medium mt-0.5 leading-tight">{p.name}</p>
                             <span
-                              className="inline-block mt-1.5 text-[9px] px-1.5 py-0.5 rounded-full font-mono"
+                              className="inline-block mt-1.5 text-[9px] p-1 rounded-full font-mono"
                               style={{ background: `${p.color}18`, color: p.color }}
                             >
                               {p.tag}

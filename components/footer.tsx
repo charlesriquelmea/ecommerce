@@ -60,7 +60,7 @@ export function Footer() {
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Tecnología eCommerce de clase mundial para negocios en LatAm. Shopify, MedusaJS y eCommy AI.
             </p>
-            <div className="flex gap-3 mt-5">
+            {/* <div className="flex gap-3 mt-5">
               {['Twitter / X', 'LinkedIn', 'Instagram'].map((social) => (
                 <a
                   key={social}
@@ -71,7 +71,7 @@ export function Footer() {
                   {social[0]}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Nav columns */}
