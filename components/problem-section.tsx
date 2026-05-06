@@ -109,67 +109,7 @@ export function ProblemSection() {
           className="glass rounded-2xl text-xs md:text overflow-hidden border border-white/8"
         >
 
-          <tbody>
-            {comparisonData.map((row, i) => (
-              <tr
-                key={i}
-                className={`border-t border-white/5 ${i % 2 === 0 ? 'bg-white/1' : ''}`}
-              >
-                <td className="px-2 md:px-6 py-4 font-medium text-white">{row.platform}</td>
-                <td className="px-2 md:px-6 py-4 text-red-400 font-mono">{row.usa}</td>
-              </tr>
-            ))}
-
-            {/* WordPress + WooCommerce */}
-            <tr className="border-t border-white/5 bg-white/1">
-              <td className="px-2 md:px-6 py-4 font-medium text-white">
-                WordPress + WooCommerce <span className="text-slate-400 text-xs">Lo más básico / Baja performance</span>
-              </td>
-              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
-                $100–$149/hr (Clutch.co)<br />
-                Setup: $8,000–$10,000 USD<br />
-                Retainer: $1,000–$3,000 USD/mes
-              </td>
-            </tr>
-
-            {/* Shopify Básico */}
-            <tr className="border-t border-white/5">
-              <td className="px-2 md:px-6 py-4 font-medium text-white">
-                Shopify — Tier Básico <span className="text-slate-400 text-xs">Alta performance / Menos soporte</span>
-              </td>
-              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
-                Setup: $2190 USD<br />
-                Retainer: $290 USD/mes<br />
-                $100–$200/hr (tenten.co)
-              </td>
-            </tr>
-
-            {/* Shopify Medio/Advance */}
-            <tr className="border-t border-white/5 bg-white/1">
-              <td className="px-2 md:px-6 py-4 font-medium text-white">
-                Shopify — Tier Medio/Advance
-              </td>
-              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
-                Setup: $20,000–$100,000 USD<br />
-                Retainer: $5,000–$10,000 USD/mes
-              </td>
-            </tr>
-
-            {/* MedusaJS */}
-            <tr className="border-t border-white/5">
-              <td className="px-2 md:px-6 py-4 font-medium text-white">
-                MedusaJS <span className="text-slate-400 text-xs">Headless Open Source — sin comisiones</span>
-              </td>
-              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
-                Setup: $10,000–$50,000 USD<br />
-                Fuente: weframetech.com<br />
-                <span className="text-green-400 text-xs">Recomendado para pequeños eCommerce sin comisiones</span>
-              </td>
-            </tr>
-          </tbody>
-
-
-          {/*           <div className="overflow-x-auto">
+          <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="">
@@ -204,13 +144,60 @@ export function ProblemSection() {
                     key={i}
                     className={`border-t border-white/5 ${i % 2 === 0 ? 'bg-white/1' : ''}`}
                   >
-                    <td className="px-6 py-4 font-medium text-white">{row.platform}</td>
-                    <td className="px-6 py-4 text-red-400 font-mono">{row.usa}</td>
+                    <td className="px-2 md:px-6 py-4 font-medium text-white">{row.platform}</td>
+                    <td className="px-2 md:px-6 py-4 text-red-400 font-mono">{row.usa}</td>
                   </tr>
                 ))}
+
+                {/* WordPress + WooCommerce */}
+                <tr className="border-t border-white/5 bg-white/1">
+                  <td className="px-2 md:px-6 py-4 font-medium text-white">
+                    WordPress + WooCommerce <span className="text-slate-400 text-xs">Lo más básico / Baja performance</span>
+                  </td>
+                  <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                    $100–$149/hr (Clutch.co)<br />
+                    Setup: $8,000–$10,000 USD<br />
+                    Retainer: $1,000–$3,000 USD/mes
+                  </td>
+                </tr>
+
+                {/* Shopify Básico */}
+                <tr className="border-t border-white/5">
+                  <td className="px-2 md:px-6 py-4 font-medium text-white">
+                    Shopify — Tier Básico <span className="text-slate-400 text-xs">Alta performance / Menos soporte</span>
+                  </td>
+                  <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                    Setup: $2190 USD<br />
+                    Retainer: $290 USD/mes<br />
+                    $100–$200/hr (tenten.co)
+                  </td>
+                </tr>
+
+                {/* Shopify Medio/Advance */}
+                <tr className="border-t border-white/5 bg-white/1">
+                  <td className="px-2 md:px-6 py-4 font-medium text-white">
+                    Shopify — Tier Medio/Advance
+                  </td>
+                  <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                    Setup: $20,000–$100,000 USD<br />
+                    Retainer: $5,000–$10,000 USD/mes
+                  </td>
+                </tr>
+
+                {/* MedusaJS */}
+                <tr className="border-t border-white/5">
+                  <td className="px-2 md:px-6 py-4 font-medium text-white">
+                    MedusaJS <span className="text-slate-400 text-xs">Headless Open Source — sin comisiones</span>
+                  </td>
+                  <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                    Setup: $10,000–$50,000 USD<br />
+                    Fuente: weframetech.com<br />
+                    <span className="text-green-400 text-xs">Recomendado para pequeños eCommerce sin comisiones</span>
+                  </td>
+                </tr>
               </tbody>
             </table>
-          </div> */}
+          </div>
         </motion.div>
       </div>
     </section>
