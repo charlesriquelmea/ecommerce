@@ -33,8 +33,8 @@ const medusaFeatures = [
 ]
 
 const duelRows = [
-  { feature: 'Setup (único)', shopify: '$1470 USD', medusa: '$1,690 USD' },
-  { feature: 'Retainer mensual', shopify: '$290/mes', medusa: '$350/mes' },
+  { feature: 'Setup (único)', shopify: '$2190 USD', medusa: '$3490 USD' },
+  { feature: 'Retainer mensual', shopify: '$290/mes', medusa: '$390/mes' },
   { feature: 'Comisión por venta', shopify: '0.5–2%', medusa: '0%' },
   { feature: 'Propiedad del código', shopify: 'Parcial', medusa: '100% tuyo' },
   { feature: 'Velocidad de setup', shopify: '10–14 días', medusa: '14–21 días' },
@@ -285,7 +285,7 @@ export function DuelSection() {
             <TabsContent value="shopify" className="mt-0">
               <div className="glass rounded-2xl p-8 border border-white/8">
                 <div className="grid lg:grid-cols-2 gap-8 items-start">
-                  {/* Left: info */}
+
                   <div>
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                       <div>
@@ -296,7 +296,7 @@ export function DuelSection() {
                         <h3 className="font-display font-black text-2xl text-white">Shopify Starter</h3>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono font-bold text-3xl text-white">$1470</p>
+                        <p className="font-mono font-bold text-3xl text-white">$2190</p>
                         <p className="text-slate-400 text-sm">Setup + $290/mes retainer</p>
                         <div className="flex items-center gap-1.5 justify-end mt-1.5">
                           <Clock size={12} className="text-slate-500" />
@@ -305,27 +305,80 @@ export function DuelSection() {
                       </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                    {/* <div className="grid sm:grid-cols-2 gap-3 mb-6">
                       {shopifyFeatures.map((feat, i) => (
                         <div key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
                           <CheckCircle size={15} className="text-emerald-400 shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </div>
                       ))}
+                    </div> */}
+                    <div className="grid sm:grid-cols-1 gap-6 mb-6">
+
+                      <div>
+                        <h4 className="font-display font-semibold text-white text-sm mb-3">
+                          Shopify starter set up
+                        </h4>
+                        {[
+                          "Configuración técnica: Cuenta, dominio, etc",
+                          "Diseño: Instalación de tema básico, personalización de marca",
+                          "Catálogo: Carga inicial de productos (5 a 20 items)",
+                          "Operaciones: Pasarelas de pago, tarifas de envío e impuestos",
+                          "Lanzamiento: SEO básico, optimización móvil y pruebas",
+                          "Envios: Flexport + Shopify Tax",
+                          "Configuración de favicon",
+                          "Branding básico",
+                          "Links de redes sociales en footer",
+                          "Google Analytics / Meta Pixel básico",
+                          "Menú de navegación (header/footer)",
+                        ].map((feat, i) => (
+                          <div key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
+                            <CheckCircle size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div>
+                        <h4 className="font-display font-semibold text-white text-sm mb-3">
+                          Retainer para Shopify incluye
+                        </h4>
+                        {[
+                          "Actualizaciones de contenido",
+                          "Gestión de aplicaciones",
+                          "Ajustes de diseño (CSS/Liquid)",
+                          "Soporte técnico y resolución de bugs",
+                        ].map((feat, i) => (
+                          <div key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
+                            <CheckCircle size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div>
+                        <h4 className="font-display font-semibold text-white text-sm mb-3">
+                          Tiempo desarrollo Shopify Starter
+                        </h4>
+                        <div className="flex items-start gap-2.5 text-sm text-slate-300">
+                          <CheckCircle size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                          <span>10 a 14 días hábiles aprox</span>
+                        </div>
+                      </div>
                     </div>
 
                     <div className="rounded-xl p-4 border w-60 sm:w-fit border-amber-500/30"
                       style={{ background: 'rgba(245,158,11,0.06)' }}>
                       <p className="text-sm text-amber-300 leading-relaxed">
-                        <strong className="text-amber-400">Nota honesta: </strong> 
-                         Shopify cobra comisiones y un fee mensual. A medida que escales,
-                        este &ldquo;impuesto al éxito&rdquo; crece contigo. Perfecto para 
+                        <strong className="text-amber-400">Nota honesta: </strong>
+                        Shopify cobra comisiones y un fee mensual. A medida que escales,
+                        este &ldquo;impuesto al éxito&rdquo; crece contigo. Perfecto para
                         empezar, pero considera migrar a MedusaJS al crecer.
                       </p>
                     </div>
                   </div>
 
-                  {/* Right: Mockup */}
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -352,8 +405,8 @@ export function DuelSection() {
                         <h3 className="font-display font-black text-2xl text-white">MedusaJS Headless</h3>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono font-bold text-3xl text-white">$1,690</p>
-                        <p className="text-slate-400 text-sm">Setup + $350/mes retainer</p>
+                        <p className="font-mono font-bold text-3xl text-white">$3490</p>
+                        <p className="text-slate-400 text-sm">Setup + $390/mes retainer</p>
                         <div className="flex items-center gap-1.5 justify-end mt-1.5">
                           <Clock size={12} className="text-slate-500" />
                           <span className="text-xs text-slate-500 font-mono">14–21 días hábiles</span>
@@ -361,14 +414,69 @@ export function DuelSection() {
                       </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                    {/* <div className="grid sm:grid-cols-2 gap-3 mb-6">
                       {medusaFeatures.map((feat, i) => (
                         <div key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
                           <CheckCircle size={15} className="text-[#00e5cc] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </div>
                       ))}
+                    </div> */}
+                    <div className="grid sm:grid-cols-1 gap-6 mb-6">
+                      {/* Subtítulo 1 */}
+                      <div>
+                        <h4 className="font-display font-semibold text-white text-sm mb-3">
+                          Template genérico sin personalización en MedusaJS incluye
+                        </h4>
+                        {[
+                          "Pagos: Stripe 2.9% + $0.3",
+                          "Fulfillment by ShipStation $29/mo (UPS, FedEx, DHL, USPS)",
+                          "Lógica Nativa: Tax Regions para impuestos y envíos",
+                          "Comisión por ventas (0% GMV) solo Fee Stripe",
+                          "Productos y Pedidos Ilimitados",
+                          "Control Total (Admin & Storefront)",
+                          "Emails Flexibles: automatización sin restricciones",
+                        ].map((feat, i) => (
+                          <div key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
+                            <CheckCircle size={15} className="text-[#00e5cc] shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Subtítulo 2 */}
+                      <div>
+                        <h4 className="font-display font-semibold text-white text-sm mb-3">
+                          Retainer para MedusaJS incluye
+                        </h4>
+                        {[
+                          "Mantenimiento del Storefront (Next.js)",
+                          "Gestión de Datos y catálogos",
+                          "Mantenimiento de infraestructura (PostgreSQL, Redis)",
+                          "Actualizaciones de seguridad y parches",
+                          "Monitoreo de uptime 24/7",
+                          "Gestión de APIs y Webhooks",
+                          "Despliegues (CI/CD)",
+                        ].map((feat, i) => (
+                          <div key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
+                            <CheckCircle size={15} className="text-[#00e5cc] shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Subtítulo 3 */}
+                      <div>
+                        <h4 className="font-display font-semibold text-white text-sm mb-3">
+                          Tiempo desarrollo MedusaJS
+                        </h4>
+                        <div className="flex items-start gap-2.5 text-sm text-slate-300">
+                          <CheckCircle size={15} className="text-[#00e5cc] shrink-0 mt-0.5" />
+                          <span>14 a 21 días hábiles aprox</span>
+                        </div>
+                      </div>
                     </div>
+
 
                     <div className="rounded-xl p-4 border border-[#00e5cc]/30"
                       style={{ background: 'rgba(0,229,204,0.06)' }}>
