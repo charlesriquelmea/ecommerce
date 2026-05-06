@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { CheckCircle, Clock, ShoppingBag, BarChart2, Settings, Star, Package, Globe, Code2, Database, GitBranch, Layers } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
+import { MedusaNoteSection } from './MedusaNoteSection'
 
 const shopifyFeatures = [
   'Storefront Shopify personalizado (Dawn o custom)',
@@ -498,6 +499,8 @@ export function DuelSection() {
               </div>
             </TabsContent>
           </Tabs>
+
+<MedusaNoteSection/>
 
           {/* Mini comparison table */}
           <motion.div
