@@ -39,7 +39,7 @@ const comparisonData = [
   },
   {
     platform: 'Setup MedusaJS Headless',
-    usa: '$25,000–$50,000 USD',
+    usa: 'Setup: $3,490 USD \n Reteiner: 390 USD/mes',
   },
 ]
 
@@ -71,7 +71,8 @@ export function ProblemSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display font-black text-4xl md:text-5xl text-white mb-14 max-w-2xl text-balance"
+          className="font-display font-black text-4xl md:text-5xl text-white mb-14 
+          max-w-2xl text-balance"
         >
           Tu tienda tiene tráfico. Pero el dinero se escapa por las grietas.
         </motion.h2>
@@ -105,23 +106,70 @@ export function ProblemSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={tableInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="glass rounded-2xl overflow-hidden border border-white/8"
+          className="glass rounded-2xl text-xs md:text overflow-hidden border border-white/8"
         >
-          {/* Table header */}
-          {/* <div className="px-6 py-4 border-b border-white/8 flex items-center 
-          justify-between flex-wrap gap-2">
-            <h3 className="font-display font-bold text-white text-lg">
-              ¿Cuánto cobra una agencia en USA?
-            </h3>
-            <Badge
-              className="font-mono text-xs px-3 py-1 rounded-full"
-              style={{ background: 'linear-gradient(135deg, #00e5cc20, #00bfa520)', color: '#00e5cc', border: '1px solid #00e5cc40' }}
-            >
-              Referencia de mercado
-            </Badge>
-          </div> */}
 
-          <div className="overflow-x-auto">
+          <tbody>
+            {comparisonData.map((row, i) => (
+              <tr
+                key={i}
+                className={`border-t border-white/5 ${i % 2 === 0 ? 'bg-white/1' : ''}`}
+              >
+                <td className="px-2 md:px-6 py-4 font-medium text-white">{row.platform}</td>
+                <td className="px-2 md:px-6 py-4 text-red-400 font-mono">{row.usa}</td>
+              </tr>
+            ))}
+
+            {/* WordPress + WooCommerce */}
+            <tr className="border-t border-white/5 bg-white/1">
+              <td className="px-2 md:px-6 py-4 font-medium text-white">
+                WordPress + WooCommerce <span className="text-slate-400 text-xs">Lo más básico / Baja performance</span>
+              </td>
+              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                $100–$149/hr (Clutch.co)<br />
+                Setup: $8,000–$10,000 USD<br />
+                Retainer: $1,000–$3,000 USD/mes
+              </td>
+            </tr>
+
+            {/* Shopify Básico */}
+            <tr className="border-t border-white/5">
+              <td className="px-2 md:px-6 py-4 font-medium text-white">
+                Shopify — Tier Básico <span className="text-slate-400 text-xs">Alta performance / Menos soporte</span>
+              </td>
+              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                Setup: $2190 USD<br />
+                Retainer: $290 USD/mes<br />
+                $100–$200/hr (tenten.co)
+              </td>
+            </tr>
+
+            {/* Shopify Medio/Advance */}
+            <tr className="border-t border-white/5 bg-white/1">
+              <td className="px-2 md:px-6 py-4 font-medium text-white">
+                Shopify — Tier Medio/Advance
+              </td>
+              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                Setup: $20,000–$100,000 USD<br />
+                Retainer: $5,000–$10,000 USD/mes
+              </td>
+            </tr>
+
+            {/* MedusaJS */}
+            <tr className="border-t border-white/5">
+              <td className="px-2 md:px-6 py-4 font-medium text-white">
+                MedusaJS <span className="text-slate-400 text-xs">Headless Open Source — sin comisiones</span>
+              </td>
+              <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+                Setup: $10,000–$50,000 USD<br />
+                Fuente: weframetech.com<br />
+                <span className="text-green-400 text-xs">Recomendado para pequeños eCommerce sin comisiones</span>
+              </td>
+            </tr>
+          </tbody>
+
+
+          {/*           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="">
@@ -162,7 +210,7 @@ export function ProblemSection() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>
