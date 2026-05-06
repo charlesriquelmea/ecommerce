@@ -76,7 +76,7 @@ const plans = [
       'Personal Shopper conversacional 24/7',
       'RAG sobre tu catálogo de productos',
       'Embeddings semánticos actualizados',
-      'Recuperación de carritos con IA',
+      /* 'Recuperación de carritos con IA', */
     ],
     compatBadge: 'Compatible con ambos planes',
   },

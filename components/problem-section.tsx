@@ -139,7 +139,7 @@ export function ProblemSection() {
                 </tr>
               </thead>
               <tbody>
-                {comparisonData.map((row, i) => (
+                {/* {comparisonData.map((row, i) => (
                   <tr
                     key={i}
                     className={`border-t border-white/5 ${i % 2 === 0 ? 'bg-white/1' : ''}`}
@@ -147,10 +147,10 @@ export function ProblemSection() {
                     <td className="px-2 md:px-6 py-4 font-medium text-white">{row.platform}</td>
                     <td className="px-2 md:px-6 py-4 text-red-400 font-mono">{row.usa}</td>
                   </tr>
-                ))}
+                ))} */}
 
                 {/* WordPress + WooCommerce */}
-                <tr className="border-t border-white/5 bg-white/1">
+                {/* <tr className="border-t border-white/5 bg-white/1">
                   <td className="px-2 md:px-6 py-4 font-medium text-white">
                     WordPress + WooCommerce <span className="text-slate-400 text-xs">Lo más básico / Baja performance</span>
                   </td>
@@ -159,19 +159,62 @@ export function ProblemSection() {
                     Setup: $8,000–$10,000 USD<br />
                     Retainer: $1,000–$3,000 USD/mes
                   </td>
-                </tr>
+                </tr> */}
 
                 {/* Shopify Básico */}
-                <tr className="border-t border-white/5">
+                {/* <tr className="border-t border-white/5">
                   <td className="px-2 md:px-6 py-4 font-medium text-white">
-                    Shopify — Tier Básico <span className="text-slate-400 text-xs">Alta performance / Menos soporte</span>
+                    Shopify — Tier Básico <span className="text-slate-400 text-xs">
+                      Alta performance / Menos soporte</span>
                   </td>
                   <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
                     Setup: $2190 USD<br />
                     Retainer: $290 USD/mes<br />
                     $100–$200/hr (tenten.co)
                   </td>
-                </tr>
+                </tr> */}
+                {/* WordPress + WooCommerce */}
+<tr className="border-t border-white/5 bg-white/1">
+  <td className="px-2 md:px-6 py-4 font-medium text-white">
+    WordPress + WooCommerce <span className="text-slate-400 text-xs">Lo más básico / Baja performance</span>
+  </td>
+  <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+    $100–$149/hr
+    <a 
+      href="https://clutch.co" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="underline hover:text-red-300 transition-colors"
+    >
+       (Clutch.co)
+    </a><br />
+    Setup: $8,000–$10,000 USD<br />
+    Retainer: $1,000–$3,000 USD/mes
+  </td>
+</tr>
+
+{/* Shopify Básico */}
+<tr className="border-t border-white/5">
+  <td className="px-2 md:px-6 py-4 font-medium text-white">
+    Shopify — Tier Básico <span className="text-slate-400 text-xs">
+      Alta performance / Menos soporte
+    </span>
+  </td>
+  <td className="px-2 md:px-6 py-4 text-red-400 font-mono">
+    Setup: $2190 USD<br />
+    Retainer: $290 USD/mes<br />
+    $100–$200/hr
+    <a 
+      href="https://tenten.co" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="underline hover:text-red-300 transition-colors"
+    >
+       (tenten.co)
+    </a>
+  </td>
+</tr>
+
 
                 {/* Shopify Medio/Advance */}
                 <tr className="border-t border-white/5 bg-white/1">
