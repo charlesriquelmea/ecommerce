@@ -136,7 +136,7 @@ function MedusaMockup() {
   ]
 
   return (
-    <div className="rounded-2xl overflow-hidden border border-[#00e5cc]/15 bg-[#0d1525] shadow-2xl">
+    <div className="rounded-2xl w-72 sm:w-auto overflow-hidden border border-[#00e5cc]/15 bg-[#0d1525] shadow-2xl">
       {/* Browser chrome */}
       <div className="flex items-center gap-2 px-3 py-2.5 border-b border-white/8 bg-[#0a0f1e]">
         <div className="flex gap-1.5 shrink-0">
@@ -409,7 +409,7 @@ export function DuelSection() {
                     </div>
 
                     <div
-                      className="rounded-xl p-4 border border-[#00e5cc]/30"
+                      className="rounded-xl w-72 ms:w-auto p-4 border border-[#00e5cc]/30"
                       style={{ background: 'rgba(0,229,204,0.06)' }}
                     >
                       <p className="text-sm text-[#00e5cc] leading-relaxed">
@@ -418,7 +418,8 @@ export function DuelSection() {
                     </div>
                   </div>
 
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                  <motion.div initial={{ opacity: 0, y: 20 }} 
+                  animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                     <MedusaMockup />
                   </motion.div>
                 </div>
